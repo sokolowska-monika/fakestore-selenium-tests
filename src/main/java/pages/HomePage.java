@@ -11,7 +11,7 @@ import org.testng.Assert;
 public class HomePage {
     protected WebDriver driver;
 
-    public HomePage(WebDriver driver){
+    public HomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

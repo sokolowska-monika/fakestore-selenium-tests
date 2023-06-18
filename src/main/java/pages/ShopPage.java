@@ -9,7 +9,7 @@ public class ShopPage extends HomePage {
         super(driver);
     }
 
-    public ShopPage assertShopPageUrl(String actualUrl){
+    public ShopPage assertShopPageUrl(String actualUrl) {
         Assert.assertEquals(driver.getCurrentUrl(), actualUrl);
         return this;
     }

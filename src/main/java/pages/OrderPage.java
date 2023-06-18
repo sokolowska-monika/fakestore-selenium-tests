@@ -18,6 +18,5 @@ public class OrderPage extends HomePage {
     public OrderPage assertOrderPageUrl(String actualUrl) {
         Assert.assertEquals(driver.getCurrentUrl(), actualUrl);
         return this;
-
     }
 }

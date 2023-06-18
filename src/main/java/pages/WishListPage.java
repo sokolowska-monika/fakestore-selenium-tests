@@ -15,7 +15,7 @@ public class WishListPage extends HomePage {
         super(driver);
     }
 
-    public WishListPage assertWishListPageUrl(String actualUrl){
+    public WishListPage assertWishListPageUrl(String actualUrl) {
         ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
         Assert.assertEquals(driver.getCurrentUrl(), actualUrl);
