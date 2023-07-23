@@ -69,6 +69,7 @@ public class RegisterNegativeTest extends SeleniumBaseTest {
                 .goToMyAccountPage()
                 .typeRegisterEmail(email)
                 .typeRegisterPassword(password)
+                .clickOutside()
                 .assertErrorPasswordIsShown(expErrorMessage)
                 .assertRegisterButtonIsDisabled();
     }

@@ -1,14 +1,11 @@
 package pages;
 
-import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.grid.config.Config;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -89,6 +86,12 @@ public class MyAccountPage extends HomePage {
         return new MyAccountPage(driver);
     }
 
+    public MyAccountPage clickOutside() {
+        Actions action = new Actions(driver);
+        action.moveByOffset(10, 10).click().build().perform();
+        return new MyAccountPage(driver);
+    }
+
     public MyAccountPage typeRegisterEmail(String email) {
         registerEmailTxt.clear();
         registerEmailTxt.sendKeys(email);
@@ -97,6 +100,10 @@ public class MyAccountPage extends HomePage {
 
     public MyAccountPage typeRegisterPassword(String password) {
         registerPasswordTxt.clear();
+        // workaround for problem with loading error messages upon PasswordTxt:
+        registerPasswordTxt.sendKeys("a");
+        registerPasswordTxt.clear();
+        //
         registerPasswordTxt.sendKeys(password);
         return this;
     }

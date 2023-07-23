@@ -24,7 +24,7 @@ public class SeleniumBaseTest {
     public void baseBeforeMethod() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.manage().window().maximize();
         driver.get(config.getApplicationUrl());
     }

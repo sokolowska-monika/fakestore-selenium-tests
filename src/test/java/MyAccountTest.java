@@ -67,6 +67,6 @@ public class MyAccountTest extends SeleniumBaseTest {
                 .typeLoginEmail(config.getApplicationUser())
                 .typeLoginPassword(password)
                 .submitLogin()
-                .assertErrorInvalidPassword();
+                .assertErrorInvalidPassword(config.getApplicationUser());
     }
 }
